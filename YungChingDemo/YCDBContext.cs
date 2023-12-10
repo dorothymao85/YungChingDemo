@@ -11,19 +11,12 @@ namespace YungChingDemo
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Filename=mydatabase.db");
-            // //Replace with your connection string.
-            // var builder = new ConfigurationBuilder()
-            //.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            // IConfiguration config = builder.Build();
 
-            // var host = config.GetSection("ConntectionString").GetSection("SQL").Value;
-            // var port = config.GetSection("ConntectionString").GetSection("Port").Value;
-            // var password = config.GetSection("ConntectionString").GetSection("Password").Value;
+        }
 
-            // var connectionString = $"Server={host}:{port}; Database=YCDB; User Id=sa; Password={password};";
-            // optionsBuilder
-            //     .UseSqlite(connectionString)
-            //     .EnableDetailedErrors();
+        public YCDBContext(DbContextOptions<YCDBContext> options)
+      : base(options)
+        {
         }
 
         public DbSet<Customers> customers { get; set; }

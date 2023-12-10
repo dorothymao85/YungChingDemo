@@ -6,8 +6,7 @@ namespace YungChingDemo.Models
     {
         [Required]
         [Key]
-        [MaxLength(5)]
-        public long uuid { get; set; }
+        public int CustomerID { get; set; }
 
         [Required]
         [StringLength(40)]
